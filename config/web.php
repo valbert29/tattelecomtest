@@ -52,7 +52,7 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'vertex',
+                    'controller' => ['vertex', 'vertexСonnections'],
                     ],
             ],
         ]

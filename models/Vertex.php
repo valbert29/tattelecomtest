@@ -10,8 +10,8 @@ use Yii;
  * @property int $id
  * @property string|null $name
  *
- * @property VertexConnections[] $vertexConnections
- * @property VertexConnections[] $vertexConnections0
+ * @property VertexConnection[] $vertexConnection
+ * @property VertexConnection[] $vertexConnection0
  */
 class Vertex extends \yii\db\ActiveRecord
 {
@@ -45,22 +45,22 @@ class Vertex extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[VertexConnections]].
+     * Gets query for [[VertexConnection]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getVertexConnections()
+    public function getVertexConnection()
     {
-        return $this->hasMany(VertexConnections::className(), ['vertex_from_id' => 'id']);
+        return $this->hasMany(VertexConnection::className(), ['vertex_from_id' => 'id']);
     }
 
     /**
-     * Gets query for [[VertexConnections0]].
+     * Gets query for [[VertexConnection0]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getVertexConnections0()
+    public function getVertexConnection0()
     {
-        return $this->hasMany(VertexConnections::className(), ['vertex_to_id' => 'id']);
+        return $this->hasMany(VertexConnection::className(), ['vertex_to_id' => 'id']);
     }
 }
